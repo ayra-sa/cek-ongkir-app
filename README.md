@@ -77,5 +77,13 @@ A Next.js application for checking shipping costs using the RajaOngkir API.
 
 ---
 
+### Dummy Data
+1. Login Page:
+   ```bash
+   username: "admin"
+   password: "password123"
+   ```
+---
+
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.

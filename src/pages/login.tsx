@@ -1,6 +1,6 @@
 import Input from "@/components/Input";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const DUMMY_USER = {
   username: "admin",
@@ -25,9 +25,14 @@ const Login = () => {
       setError("Username atau password salah.");
     }
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("auth_token_test")
+    if (!!token) return router.push("/")
+  }, [router])
   return (
     <div className="flex place-content-center items-center h-screen">
-      <div className="border border-stone-300 py-10 px-8 rounded-md w-[30%]">
+      <div className="border border-stone-300 py-10 px-8 rounded-md min-w-[30%]">
         <h1 className="text-2xl font-semibold">Login</h1>
         <form onSubmit={handleLogin} className="space-y-1 mt-10">
           <Input id="username" label="Username" name="username" value={username} handleChange={(e) => setUsername(e.target.value)} />

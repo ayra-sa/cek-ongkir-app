@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
         id={id}
         value={value}
         onChange={handleChange}
-        className="border border-stone-300 rounded-md p-3 w-[300px]"
+        className="border border-stone-300 rounded-md p-3 max-w-[300px]"
         autoComplete="off"
       />
     </div>
